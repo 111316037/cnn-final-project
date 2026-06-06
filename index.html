@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>期末評量成果展示 - CNN 卷積神經網路</title>
+    <title>111316037_徐尚言_期末評量-CNN卷積神經網路</title>
     <style>
         :root {
             --primary-color: #2563eb;
@@ -119,7 +119,7 @@
 <body>
 
     <header>
-        <h1>期末評量成果展示</h1>
+        <h1>期末評量</h1>
         <div class="user-info">
             <span><strong>學號：</strong>111316037</span> | 
             <span><strong>姓名：</strong>徐尚言</span> | 
@@ -155,14 +155,13 @@
             <h3>對話紀錄截圖：</h3>
             <div class="screenshot-placeholder">
                 <img src="截圖 2026-06-06 下午4.06.36.png" alt="AI 對話紀錄截圖 (若圖片未顯示，請確認檔名與路徑是否正確)">
-                <p style="margin-top: 0.5rem; font-size: 0.9rem;">（註：請將對話紀錄截圖放入專案中取代此圖）</p>
             </div>
         </section>
 
         <section id="verification">
             <h2>三、查證與修正</h2>
             <p><strong>驗證核心：</strong>驗證拉平是否是無法對接分類器的必要步驟。</p>
-            <p><strong>資料來源：</strong><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://syshen.medium.com/%25E5%2585%25A5%25E9%2596%2580%25E6%25B7%25B1%25E5%25BA%25A6%25E5%25AD%25B8%25E7%25BF%2592-2-d694cad7d1e5&ved=2ahUKEwiM88DHufKUAxWGYvUHHUtfH8YQFnoECA0QAQ&usg=AOvVaw0W7DtNRqmo5ubCpFdUBlIM" target="_blank">點此觀看技術文件/論文來源連結</a></p>
+            <p><strong>資料來源：</strong><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://syshen.medium.com/%25E5%2585%25A5%25E9%2596%2580%25E6%25B7%25B1%25E5%25BA%25A6%25E5%25AD%25B8%25E7%25BF%2592-2-d694cad7d1e5&ved=2ahUKEwiM88DHufKUAxWGYvUHHUtfH8YQFnoECA0QAQ&usg=AOvVaw0W7DtNRqmo5ubCpFdUBlIM" target="_blank">資料來源</a></p>
             
             <table>
                 <thead>
@@ -190,7 +189,7 @@
 
         <section id="visualization">
             <h2>四、視覺化說明：CNN 核心運作流程</h2>
-            <p>以下為 CNN 的核心運作架構元件對照：</p>
+            
             <table>
                 <thead>
                     <tr>
@@ -220,13 +219,13 @@
         </section>
 
         <section id="case-study">
-            <h2>五、應用案例：手機臉部解鎖（Face Unlock）</h2>
-            <p>在智慧型手機中，臉部解鎖是一項極為普及且注重安全與即時性的功能：</p>
+            <h2>五、應用案例：手機臉部解鎖</h2>
+           
             <ol>
-                <li><strong>影像擷取</strong>：點亮螢幕時，前鏡頭會捕捉一張你當下的面部照片。</li>
-                <li><strong>特徵提煉</strong>：透過 CNN 的卷積層與池化層，逐步抓出臉部的基本線條（如眼眶、鼻梁）與高級特徵（如兩眼距離、鼻尖高低）。</li>
-                <li><strong>特徵向量化</strong>：現代手機為了精簡模型與運作速度，常結合<strong>全域平均池化 (GAP)</strong> 技術，將整張臉濃縮轉化為一串精簡的「特徵向量（數字密碼）」。</li>
-                <li><strong>比對與解鎖</strong>：手機將當下計算出來的數字密碼，與當初設定時儲存在安全晶片中的主人密碼進行比對，相似度達標即可在不到一秒內瞬間解鎖。</li>
+                <li><strong>影像擷取</strong>：點亮螢幕時，鏡頭會捕捉當下的面部照片。</li>
+                <li><strong>特徵提煉</strong>：透過 CNN 的卷積層與池化層，抓出臉部的基本線條與特徵。</li>
+                <li><strong>特徵向量化</strong>：為了精簡模型與運作速度，常結合<strong>全域平均池化 (GAP)</strong> 技術，將臉部數據濃縮轉化為精簡的特徵向量。</li>
+                <li><strong>比對與解鎖</strong>：將當下計算出來的數據，與儲存在安全晶片中的主人密碼進行比對，相似度達標即解鎖。</li>
             </ol>
         </section>
 
