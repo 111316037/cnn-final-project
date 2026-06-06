@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期末評量成果展示 - CNN 卷積神經網路</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .user-info {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .user-info span {
+            margin: 0 10px;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 1.5rem;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        blockquote {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary-color);
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: var(--secondary-color);
+        }
+        .screenshot-placeholder {
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #64748b;
+        }
+        .screenshot-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>期末評量成果展示</h1>
+        <div class="user-info">
+            <span><strong>學號：</strong>111316037</span> | 
+            <span><strong>姓名：</strong>徐尚言</span> | 
+            <span><strong>主題：</strong>CNN 卷積神經網路</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>一、演算法介紹</h2>
+            <p><strong>CNN 卷積神經網路</strong>，是一種主要在圖像辨識方面專長的深度學習演算法。主要解決了傳統的神經網路參數過多的問題，並能保留圖片的空間結構資訊。</p>
+            <p>其基本運作流程主要有四個部分：</p>
+            <ul>
+                <li><strong>卷積層 (Convolution Layer)</strong>：利用多個小濾鏡在圖片上滑動局部掃描圖片，抓出圖片的局部特徵。</li>
+                <li><strong>線性整流層 (Activation Layer / ReLU)</strong>：加強神經網路的非線性特性，有效提升訓練速度。</li>
+                <li><strong>池化層 (Pooling Layer)</strong>：在圖中過濾雜訊並縮小圖片以減少計算量。</li>
+                <li><strong>完全連接層 (Fully Connected Layer)</strong>：最後會把以上處理過的特徵拉平後分類。</li>
+            </ul>
+            <p><strong>常見應用：</strong>有影像分類如手機臉部解鎖、物件偵測如自動駕駛汽車辨識路況，也常用於自然語言處理。</p>
+        </section>
+
+        <section id="ai-record">
+            <h2>二、AI 輔助學習紀錄</h2>
+            <h3>1. 自己問了 AI 什麼問題：</h3>
+            <blockquote>「在 CNN 的最後，為什麼要把特徵圖拉平？不能直接輸出結果嗎？」</blockquote>
+            
+            <h3>2. AI 回答的重點是什麼：</h3>
+            <p>負責最終分類的「全連接層」在數學結構上只接受一維向量輸入。如果不把特徵矩陣拉平，高維度資料就無法直接對接分類器並輸出預測結果。</p>
+            
+            <h3>3. 這些回答如何幫助自己理解：</h3>
+            <p>這個回答讓我釐清了傳統 CNN 架構的資料流向，以及拉平動作與卷積層、全連接層之間格式轉換的對接關係。</p>
+            
+            <h3>對話紀錄截圖：</h3>
+            <div class="screenshot-placeholder">
+                <img src="ai-screenshot.png" alt="AI 對話紀錄截圖 (若圖片未顯示，請確認檔名與路徑是否正確)">
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">（註：請將對話紀錄截圖放入專案中取代此圖）</p>
+            </div>
+        </section>
+
+        <section id="verification">
+            <h2>三、查證與修正</h2>
+            <p><strong>驗證核心：</strong>驗證拉平是否是無法對接分類器的必要步驟。</p>
+            <p><strong>資料來源：</strong><a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://syshen.medium.com/%25E5%2585%25A5%25E9%2596%2580%25E6%25B7%25B1%25E5%25BA%25A6%25E5%25AD%25B8%25E7%25BF%2592-2-d694cad7d1e5&ved=2ahUKEwiM88DHufKUAxWGYvUHHUtfH8YQFnoECA0QAQ&usg=AOvVaw0W7DtNRqmo5ubCpFdUBlIM" target="_blank">點此觀看技術文件/論文來源連結</a></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">項目</th>
+                        <th style="width: 80%;">詳細內容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>查證說明</strong></td>
+                        <td><strong>全域平均池化 Global Average Pooling (GAP)</strong> 是卷積層之後，一種可以取代全連接層的做法，將整個特徵圖計算平均值。因此，拉平（Flatten）並非唯一的做法。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>修正前理解</strong></td>
+                        <td>認為 CNN 最後一定要拉平成一維向量，才能送進全連接層輸出結果，否則高維度資料在數學結構上無法對接分類器。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>修正後理解</strong></td>
+                        <td>現代 CNN 常用全域平均池化（Global Average Pooling, 簡稱 GAP）來取代 Flatten 和全連接層。不僅不需要拉平，還能大幅減少網路的參數總量，有效防止模型過擬合（Overfitting）。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="visualization">
+            <h2>四、視覺化說明：CNN 核心運作流程</h2>
+            <p>以下為 CNN 的核心運作架構元件對照：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>核心元件</th>
+                        <th>大白話解釋它在幹嘛</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>卷積層 (Convolution)</strong></td>
+                        <td>利用多個小濾鏡在圖片上滑動進行局部掃描，抓出圖片的局部特徵（如線條、邊緣）。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>線性整流層 (ReLU)</strong></td>
+                        <td>加強神經網路的非線性特性，有效提升模型的訓練速度。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>池化層 (Pooling)</strong></td>
+                        <td>通常使用最大池化（Max Pooling），負責過濾雜訊並縮小圖片，以減少計算量。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>完全連接層 (Fully Connected)</strong></td>
+                        <td>最後會把前面處理過的特徵拉平（Flatten）後連接起來，進行最終的分類決策。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="case-study">
+            <h2>五、應用案例：手機臉部解鎖（Face Unlock）</h2>
+            <p>在智慧型手機中，臉部解鎖是一項極為普及且注重安全與即時性的功能：</p>
+            <ol>
+                <li><strong>影像擷取</strong>：點亮螢幕時，前鏡頭會捕捉一張你當下的面部照片。</li>
+                <li><strong>特徵提煉</strong>：透過 CNN 的卷積層與池化層，逐步抓出臉部的基本線條（如眼眶、鼻梁）與高級特徵（如兩眼距離、鼻尖高低）。</li>
+                <li><strong>特徵向量化</strong>：現代手機為了精簡模型與運作速度，常結合<strong>全域平均池化 (GAP)</strong> 技術，將整張臉濃縮轉化為一串精簡的「特徵向量（數字密碼）」。</li>
+                <li><strong>比對與解鎖</strong>：手機將當下計算出來的數字密碼，與當初設定時儲存在安全晶片中的主人密碼進行比對，相似度達標即可在不到一秒內瞬間解鎖。</li>
+            </ol>
+        </section>
+
+        <section id="reflection">
+            <h2>六、學習反思</h2>
+            <ul>
+                <li><strong>AI 對學習的幫助</strong>：
+                    AI 是一個非常方便的個人助教。當我面對 CNN 這種充滿抽象矩陣相乘的演算法時，AI 能夠用生活化的比喻（如小濾鏡、探照燈），幫我在短時間內建立起直覺的圖像化理解。
+                </li>
+                <li><strong>AI 回答的限制</strong>：
+                    在這次的學習過程中我也發現，AI 的回答有時會顯得過於傳統或不夠全面。例如當我詢問 Flatten 步驟時，AI 的回答讓我誤以為那是唯一且必要的做法，差點漏掉了現代深度學習中非常重要的「全域平均池化（GAP）」技術。這提醒了我在使用 AI 工具時，必須保持批判性思考。
+                </li>
+                <li><strong>自己最後真正學到了什麼</strong>：
+                    這次的期末任務中，我不僅學到了 CNN 運作的完整流程，更體會到「動手查證」的重要性。我學會了如何把對 AI 的質疑轉化為關鍵字去搜尋相關技術，進而掌握了 GAP 這種能幫模型減肥、防止過擬合的進階觀念。
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 期末評量成果報告. All HTML & CSS Designed for SimpleLEARN Assessment.</p>
+    </footer>
+
+</body>
+</html>
